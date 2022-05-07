@@ -2,7 +2,11 @@
 def __main__():
     with open("report.txt", "r", encoding="utf-8") as f:
         reports = f.readlines()
+    
+    part1(reports)
+    part2(reports)
 
+def part1(reports):
     gamma = []
     epsilon = []
 
@@ -14,10 +18,10 @@ def __main__():
                 counter_1 += 1
             else:
                 counter_0 += 1
-        if counter_1 > counter_0:
+        if counter_1 >= counter_0:
             gamma.append(1)
             epsilon.append(0)
-        else:
+        elif counter_1 < counter_0:
             gamma.append(0)
             epsilon.append(1)
 
@@ -25,6 +29,8 @@ def __main__():
     epsilon_dec = int("".join(str(x) for x in epsilon), 2)
     print(gamma_dec * epsilon_dec)
 
+def part2(reports):
+    pass
 
 if __name__ == '__main__':
     __main__()
