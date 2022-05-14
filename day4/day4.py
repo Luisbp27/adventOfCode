@@ -1,4 +1,5 @@
 import csv
+import numpy
 
 class Board:
 
@@ -15,6 +16,10 @@ class Board:
 def __main__():
     with open("numbers.txt", "r", encoding="utf-8") as f:
         numbers = list(csv.reader(f, delimiter=','))
+    
+    
+    
+
 
 
 if __name__ == '__main__':
